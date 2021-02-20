@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        direction: rtl;
+        font-family: samim;
+        }
+
+        .dCard {
+        background-color: #f6f6f6;
+        width: 90%;
+        margin: 40px auto;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .dCard-picture {
+        float: right;
+        width: 40%;
+        background: url("<%= product.picture %>");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-height: 34rem;
+        overflow: hidden;
+        border-radius: 8px;
+        }
+        .dCard-content {
+        float: left;
+        width: 60%;
+        padding: 20px;
+        padding-right: 20px;
+        }
+
+        .dCard-title h2 {
+        font-size: 1.35rem;
+        margin-bottom: 20px;
+        color: #282828;
+        }
+
+        .dCrad-description {
+        margin-bottom: 40px;
+        }
+
+        .dCrad-description p {
+        font-size: 0.95rem;
+        }
+
+        .dCard-feature {
+        margin-bottom: 40px;
+        }
+
+        .dCrad-description h3, .dCard-feature h3 {
+        color: #888;
+        margin-bottom: 10px;
+        font-weight: 500;
+        }
+
+        .dCard-feature ul {
+        /* background-color: #888; */
+        list-style: none;
+        }
+
+        .dCard-feature li {
+        margin-bottom: 10px;
+        overflow: hidden;
+        }
+
+        .dCard-feature li p {
+        background-color: #ddd;
+        float: right;
+        width: 60%;
+        padding: 10px;
+        padding-right: 20px;
+        border-radius: 4px;
+        font-size: 0.96rem;
+        }
+
+        .dCard-feature li p.fd {
+        width: 30%;
+        color: #666;
+        margin-left: 15px;
+        }
+
+
+        .dCard-buy {
+        /* background-color: #ccc; */
+        overflow: hidden;
+        text-align: center;
+        }
+
+        .dCard-buy p {
+        float: right;
+        width: 30%;
+        margin-left: 15px;
+        padding: 8px 0;
+        color: rgb(19, 47, 75);
+        }
+
+        .dCard-buy a {
+        float: right;
+        width: 60%;
+        text-decoration: none;
+        color: #fff;
+        background-color: #63aefa;
+        font-size: 1.08rem;
+        padding: 8px 16px;
+        border-radius: 6px;
+        }
+
+        @media only screen and (max-width: 685px) {
+        .dCard-picture, .dCard-content {
+        width: 100%;
+        }
+
+        .dCard-picture {
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        min-height: 15rem;
+        overflow: hidden;
+        border-radius: 8px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <%- include('../views/partial/header.ejs') %>
+
+     <div class="dCard">
+         <div class="dCard-picture"></div>
+         <div class="dCard-content">
+             <div class="dCard-title">
+                 <h2><%= product.title %> <%= product.model %></h2>
+             </div>
+
+             <div class="dCrad-description">
+                 <h3>توضیحات</h3>
+                 <p>
+                     <span><%= product.title %></span>
+                     <span><%= product.model %></span>
+                     از جنس
+                     <span><%= product.material %></span>
+                     تولید شده که به رنگ
+                     <span><%= product.color %></span>
+                     و سایز
+                     <span><%= product.size %></span>
+                     موجود است
+                 </p>
+             </div>
+
+             <div class="dCard-feature">
+                 <h3>مشخصات</h3>
+
+                 <ul>
+                     <li>
+                         <p class="fd">جنس</p>
+                         <p><%= product.material %></p>
+                     </li>
+                     <li>
+                         <p class="fd">رنگ</p>
+                         <p><%= product.color %></p>
+                     </li>
+                     <li>
+                         <p class="fd">سایز</p>
+                         <p><%= product.size %></p>
+                     </li>
+                 </ul>
+             </div>
+
+             <div class="dCard-buy">
+                 <p><%= product.price %> تومان</p>
+                 <a href="">خرید</a>
+             </div>
+         </div>
+     </div>
+</body>
+</html>

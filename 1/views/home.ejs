@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <style>
+        @font-face {
+        font-family: Samim;
+        src: url('http://fonts.codearena.ir/rastikerdar/samim/samim.eot');
+        src: url('http://fonts.codearena.ir/rastikerdar/samim/samim.eot?#iefix') format('embedded-opentype'),
+        url('http://fonts.codearena.ir/rastikerdar/samim/samim.woff') format('woff'),
+        url('http://fonts.codearena.ir/rastikerdar/samim/samim.ttf') format('truetype');
+        font-weight: normal;
+        }
+
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        direction: rtl;
+        font-family: samim;
+        }
+
+        .card {
+        /* background-color: #ccc; */
+        width: 20rem;
+        margin: 20px auto;
+        border-radius: 8px;
+        /* border: 1px solid #ddd; */
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+        float: right;
+        margin-right: 100px;
+        }
+
+        .card-picture {
+        width: 100%;
+        height: 14rem;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        }
+
+        .card-title {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin-top: 20px;
+        padding: 0 20px;
+        }
+
+        .card-list {
+        list-style: none;
+        margin-top: 20px;
+        padding: 0 20px;
+        }
+
+        .card-list li {
+        margin-bottom: 10px;
+        }
+
+        .card-list li b {
+        margin-left: 10px;
+        }
+
+        .card-buy {
+        overflow: hidden;
+        padding: 10px 20px 20px 20px;
+        }
+
+        .card-buy p {
+        float: right;
+        width: 55%;
+        color: #888;
+        font-size: 1.08rem;
+        padding: 8px 16px;
+        }
+
+        .card-buy a {
+        float: left;
+        width: 45%;
+        text-decoration: none;
+        color: #fff;
+        background-color: #63aefa;
+        text-align: center;
+        font-size: 1.08rem;
+        padding: 8px 16px;
+        border-radius: 6px;
+        }
+        .card-buy a:hover {
+        background-color: #3885d1;
+        transition: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../views/partial/header.ejs') %> 
+
+    <% for( let index = 0; index < data.length; index++ ) { %>
+        <div class="card">
+            <div class="card-picture" style="background: url('<%= data[index].picture %>') no-repeat center; background-size: cover;"></div>
+
+            <div class="card-title">
+                <h2><%= data[index].title %> <%= data[index].model %></h2>
+            </div>
+
+            <ul class="card-list">
+                <li><b>رنگ:</b> <%= data[index].color %></li>
+                <li><b>جنس:</b> <%= data[index].material %></li>
+                <li><b>سایز:</b> <%= data[index].size %></li>
+            </ul>
+
+
+            <div class="card-buy">
+                <p><%= data[index].price %> تومان</p>
+                <a href="<%= data[index].id %>">خرید</a>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>

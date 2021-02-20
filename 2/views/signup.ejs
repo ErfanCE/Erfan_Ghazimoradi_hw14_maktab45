@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUP Page</title>
+
+    <script src="javascripts/jquery-3.5.1.min.js"></script>
+    <style>
+        body {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <form action="/getSignup" method="POST" id="signupForm">
+        <input name="username" type="text" id="username" placeholder="Username">
+        <input name="password" type="text" id="password" placeholder="Password">
+        <input name="email" type="text" id="email" placeholder="Email">
+
+        <select name="gender" id="gender">
+            <option value="male" selected>Male</option>
+            <option value="femail">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button type="submit">signup</button>
+    </form>
+
+    <!-- scripts -->
+    <script src="javascripts/signup.js"></script>
+</body>
+</html>

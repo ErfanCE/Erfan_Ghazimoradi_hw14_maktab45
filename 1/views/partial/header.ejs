@@ -1,0 +1,86 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
+" />
+
+    <style>
+        /* font */
+        @font-face {
+            font-family: Samim;
+            src: url('http://fonts.codearena.ir/rastikerdar/samim/samim.eot');
+            src: url('http://fonts.codearena.ir/rastikerdar/samim/samim.eot?#iefix') format('embedded-opentype'),
+                url('http://fonts.codearena.ir/rastikerdar/samim/samim.woff') format('woff'),
+                url('http://fonts.codearena.ir/rastikerdar/samim/samim.ttf') format('truetype');
+            font-weight: normal;
+        }
+
+        * {
+            font-family: samim;
+            box-sizing: border-box;
+            direction: rtl;
+        }
+
+        body {
+            background-color: #eee;
+        }
+
+        .navigation {
+            list-style-type: none;
+            margin: 0 10px;
+            padding: 0;
+            overflow: auto;
+            background-color: #222;
+            margin-top: 20px;
+        }
+
+        .navigation>li {
+            float: right;
+        }
+
+        .navigation>li>a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 18px 15px;
+            font-size: 1.05rem;
+        }
+
+        .navigation>li>a>i {
+            padding-left: 6px;
+        }
+
+        .navigation>li:first-child>a {
+            padding: 18px;
+        }
+
+        .navigation>li>a:hover {
+            background-color: #000;
+            transition: 0.6s;
+        }
+
+        .navigation li a.active {
+            background-color: dodgerblue;
+        }
+
+        .search {
+            float: left;
+        }
+    </style>
+</head>
+<header>
+    <ul class="navigation">
+        <li><a href="/home" class="active">
+            <i class="fas fa-home"></i>
+            خانه
+        </a></li>
+        <li><a href="/about">
+            <i class="fas fa-users"></i>
+            درباره ما
+        </a></li>
+        <li><a href="/contact" >
+            <i class="fas fa-address-card"></i>
+            تماس با ما
+        </a></li>
+
+        <input type="text" placeholder="جستجو" class="search">
+    </ul>
+</header>
