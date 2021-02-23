@@ -8,7 +8,6 @@ $('#signupForm').on('submit', function (event) {
         gender: $('#gender').val()
     };
 
-
     $.ajax({
         type: "POST",
         url: "http://localhost:8000/getSignup",
@@ -17,8 +16,28 @@ $('#signupForm').on('submit', function (event) {
             if (response === 'create') {
                 location.href = 'http://localhost:8000/login';
             } else {
-                console.log(response);
+                errorAlert(response);
             }
         }
     });
+
 });
+
+function errorAlert(status) {
+    let errorMsg;
+
+    if (status === 'empty') {
+        errorMsg = 'Fill out all fields.';
+    } else if (status === 'exist') {
+        errorMsg = 'This username is already taken.'
+    } else {
+        errorMsg = 'Something went wrong! try again.'
+    }
+
+    $('.error-alert').css('display', 'block');
+    $('.error-alert').html(`<p>${errorMsg}</p>`);
+
+    setTimeout(function () {
+        $('.error-alert').fadeOut(500);
+    }, 1500);
+}

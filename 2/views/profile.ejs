@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-</head>
-<body>
-    <h1><%= user.username %>  Profile</h1>
 
-    <h3>dashbord</h3>
-    <p>username: <%= user.username %></p>
-    <p>password: <%= user.password %></p>
-    <p>email: <%= user.email %></p>
-    <p>gender: <%= user.gender %></p>
+    <script src="javascripts/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/profile.css">
+</head>
+
+<body>
+    <div class="showcase">
+        <div class="dCard">
+            <h3 class="dCard-title"><%= user.username %> Profile</h3>
+
+            <div class="dCard-feature">
+                <ul>
+                    <li>
+                        <p>Username</p>
+                        <p class="fd"><%= user.username %></p>
+                    </li>
+                    <li>
+                        <p>Password:</p>
+                        <p class="fd"> <%=user. password %></p>
+                    </li>
+                    <li>
+                        <p>Email:</p>
+                        <p class="fd"><%= user.email %></p>
+                    </li>
+                    <li>
+                        <p>Gender:</p>
+                        <p class="fd"><%= user.gender %></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dCard-buy">
+                <a href="/edit-<%= user.username %> ">Edit Profile</a>
+
+                <a class="fd" href="/">Logout from <%= user.username %></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="javascripts/profile.js"></script>
 </body>
+
 </html>

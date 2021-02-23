@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showcase {
+    background: url(../images/main-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dCard {
+    background-color: rgba(0, 0, 0, 0.883);
+    width: 50%;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 30px 40px 50px 40px;
+}
+
+
+.dCard-title {
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #4d5ab9;
+}
+
+.dCard-feature {
+    margin-bottom: 40px;
+}
+
+.dCard-feature ul {
+    list-style: none;
+}
+
+.dCard-feature li {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.dCard-feature li p {
+    background-color: #f9f9f9;
+    float: left;
+    width: 30%;
+    padding: 10px;
+    padding-left: 20px;
+    border-radius: 4px;
+    font-size: 0.96rem;
+}
+
+.dCard-feature li p.fd {
+    width: 60%;
+    color: #444;
+    margin-left: 15px;
+}
+
+
+.dCard-buy {
+    /* background-color: #ccc; */
+    overflow: hidden;
+    text-align: center;
+}
+
+.dCard-buy p {
+    float: right;
+    width: 30%;
+    margin-left: 15px;
+    padding: 8px 0;
+    color: rgb(19, 47, 75);
+}
+
+.dCard-buy {
+    width: 100%;
+    overflow: hidden;
+}
+
+.dCard-buy a {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    padding-right: 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    background-color: #2d2f53;
+    color: #f5f5f5;
+    font-size: 1rem;
+    text-transform: capitalize;
+    cursor: pointer;
+    /* transition: 0.3s; */
+}
+
+.dCard-buy a:hover {
+    background-color: #383c8d;
+    transition: 0.3s;
+}
+
+.dCard-buy a.fd {
+    width: 60%;
+    margin-left: 15px;
+}
+
+@media only screen and (max-width: 875px) {
+    .dCard {
+        width: 80%;
+    }
+
+    .dCard-feature li p {
+        padding-left: 15px;
+    }
+
+    .dCard-buy a,
+    .dCard-buy a.fd {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .dCard-buy a.fd {
+        margin-top: 20px;
+    }
+}

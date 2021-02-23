@@ -10,10 +10,12 @@ exports.loginHandller = (request, response) => {
 
 
     usersList.forEach(listUser => {
+        listUser.isLoggedIn = false;
+        
         if (targetUser.username === listUser.username && targetUser.password === listUser.password) {
             listUser.isLoggedIn = true;
             isSignup = true;
-        } 
+        }
     });
 
     if (!isSignup) {

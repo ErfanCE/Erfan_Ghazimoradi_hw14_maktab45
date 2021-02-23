@@ -13,7 +13,8 @@ exports.signupHandler = (request, response) => {
 
     // check for exist user return: true, false
     signupList.forEach(listUser => {
-        if (targetUser.username === listUser.username) isExist = true;
+        if (targetUser.username === listUser.username)  isExist = true;
+        listUser.isLoggedIn = false;
     });
 
     // for valid signup add user object in json

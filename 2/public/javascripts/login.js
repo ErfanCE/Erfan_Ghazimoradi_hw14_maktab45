@@ -13,10 +13,32 @@ $('#loginForm').on('submit', function (event) {
         data,
         success: function (response) {
             if (response === 'login') {
-                location.href = `http://localhost:8000/${data.username}`;
+                location.href = `http://localhost:8000/profile-${data.username}`;
             } else {
-                console.log(response);
+                errorAlert(response)
             }
         }
     });
 });
+
+function errorAlert(status) {
+    let errorMsg;
+
+    if (status === 'empty') {
+        errorMsg = 'Fill out all fields.';
+    } else if (status === 'signup') {
+        errorMsg = 'Username and Password do not Match.'
+    } else {
+        errorMsg = 'Something went wrong! try again.'
+    }
+
+    $('.error-alert').css('opacity', '1');
+    $('.error-alert').html(`<p>${errorMsg}</p>`);
+
+    setTimeout(function () {
+        $('.error-alert').css({
+            opacity: '0',
+            transition: '0.3s'
+        });
+    }, 1500);
+}

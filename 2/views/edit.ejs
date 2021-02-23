@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit page</title>
+    
+    <link rel="stylesheet" href="stylesheets/edit.css">
+
+    <script src="javascripts/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="showcase">
+        <form action="/" method="POST" id="editForm" class="edit-form">
+            <h3>Edit Profile</h3>
+
+            <label class="edit-label">Username: <span>(cant edit username yet!)</span></label>
+            <input autocomplete="off" class="edit-input" type="text" name="username" id="username" disabled value="<%=user.username%> ">
+
+            <label class="edit-label">Password: </label>
+            <input autocomplete="off" class="edit-input" type="text" name="password" id="password" value="<%= user.password %> ">
+
+            <label class="edit-label">Email: </label>
+            <input autocomplete="off" class="edit-input" type="text" name="email" id="email" value="<%= user.email %> ">
+
+            <label class="edit-label">Gender: </label>
+            <select class="edit-input" name="gender" id="gender">
+                <option value="<%= user.gender %>" selected hidden> <%= user.gender.charAt(0).toUpperCase() + user.gender.slice(1) %>
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="edit-btncase">
+                <button class="edit-btn" type="submit">Edit</button>
+
+                <a href="/" class="edit-btn float-right">Cancel</a>
+            </div>
+        </form>
+    </div>
+    
+    
+    <script src="javascripts/edit.js"></script>
+</body>
+</html>
