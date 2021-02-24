@@ -1,7 +1,6 @@
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css
-" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    
     <style>
         /* font */
         @font-face {
@@ -17,6 +16,9 @@
             font-family: samim;
             box-sizing: border-box;
             direction: rtl;
+            outline: none;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -25,11 +27,10 @@
 
         .navigation {
             list-style-type: none;
-            margin: 0 10px;
             padding: 0;
-            overflow: auto;
+            overflow: hidden;
             background-color: #222;
-            margin-top: 20px;
+            box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
         }
 
         .navigation>li {
@@ -53,7 +54,7 @@
         }
 
         .navigation>li>a:hover {
-            background-color: #000;
+            background-color: dodgerblue;
             transition: 0.6s;
         }
 
@@ -61,26 +62,53 @@
             background-color: dodgerblue;
         }
 
-        .search {
+        .search-bar {
             float: left;
+            padding: 15px 15px;
+            overflow: hidden;
+        }
+
+        .search-bar input{
+            padding: 5px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        .search-bar button{
+            padding: 5px 12px 5px 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background-color: dodgerblue;
+            color: #fafafa;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .search-bar button:hover{
+        background-color: rgb(0, 113, 226);
+        transition: 0.3s;
         }
     </style>
 </head>
 <header>
     <ul class="navigation">
-        <li><a href="/home" class="active">
+        <li><a href="/home" id="home">
             <i class="fas fa-home"></i>
             خانه
         </a></li>
-        <li><a href="/about">
+        <li><a href="/about" id="about">
             <i class="fas fa-users"></i>
             درباره ما
         </a></li>
-        <li><a href="/contact" >
+        <li><a href="/contact" id="contact">
             <i class="fas fa-address-card"></i>
             تماس با ما
         </a></li>
-
-        <input type="text" placeholder="جستجو" class="search">
+        
+        <form action="/home" class="search-bar">
+            <input name="search" type="text" placeholder="جستجو" class="search">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </ul>
+    
 </header>

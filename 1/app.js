@@ -20,9 +20,12 @@ app.use('/', aboutRoute);
 
 app.use('/', productRoute);
 
+
 // 404: page not found
-app.use((requset, response) => {
-    response.status(404).send('<pre style="color: red">404: <b>Page not Found!</b></pre>');
+app.use('*', (requset, response) => {
+    response.status(404).render(path.join(__dirname, 'views', 'product404.ejs'), {
+        keyword: 'صفحه'
+    });
 });
 
 

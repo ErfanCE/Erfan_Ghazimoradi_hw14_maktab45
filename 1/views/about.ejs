@@ -5,10 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
+
+    <style>
+        h1 {
+        margin-top: 20px;
+        margin-right: 40px;
+        color: rgb(24, 115, 207);
+        }
+        .error {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #222;
+        padding: 40px;
+        text-align: center;
+        color: #f9f9f9;
+        border-radius: 6px;
+        }
+    </style>
 </head>
 <body>
-    <h1>درباره ما</h1>
-
     <%- include('../views/partial/header.ejs') %>
+    <h1>درباره ما</h1>
+    <div class="error">
+        <p>صفحه در حال ساخت ...</p>
+    </div>
 </body>
 </html>
